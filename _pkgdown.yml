@@ -1,0 +1,36 @@
+url: http://echarts4r-assets.john-coene.com
+
+template:
+  params:
+    bootswatch: lumen
+    ganalytics: UA-74544116-1
+    docsearch:
+      api_key: f67fcda57c44388a248e49a457aa4fe7
+      index_name: echarts4r
+
+development:
+  mode: release
+
+navbar:
+  title: "echarts4r.assets"
+  left:
+    - icon: fa-home
+      href: index.html
+    - icon: fa-balance-scale
+      href: LICENSE.html
+    - icon: fa-newspaper-o
+      href: news/index.html
+    - icon: fa-code
+      href: "reference/"
+    - icon: fa-globe
+      text: "Shiny"
+      href: assets.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/JohnCoene/echarts4r.assets
+    - icon: fa-bitbucket fa-lg
+      href: https://bitbucket.org/JohnCoene/echarts4r.assets
+
+authors:
+  John Coene:
+    href: http://john-coene.com

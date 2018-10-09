@@ -1,0 +1,101 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+All assets currently available.
+
+```{r}
+library(echarts4r)
+library(echarts4r.assets)
+```
+
+For demonstration purposes let's create a basic, non working plot to which we'll add assets.
+
+```{r} 
+base <- e_charts() %>% # initialise
+  e_rm_axis("x") %>% # remove axis
+  e_rm_axis("y") 
+```
+
+## Examples
+
+*These are not all the textures included*
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world")
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("galaxy"),
+    base.texture = ea_asset("jupiter")
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world topo"),
+    height.texture = ea_asset("elevation 4k")
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world topo"),
+    height.texture = ea_asset("elevation 4k"),
+    displacementScale = 0.4
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world"),
+    layers = list(
+      list(
+        type = "overlay",
+        shading = "lambert",
+        texture = ea_asset("clouds"),
+        distance = 5
+      )
+    )
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    displacementScale = 0.1,
+    baseColor = "#000",
+    shading = "hatching",
+    height.texture = ea_asset("elevation 4k"),
+    hatchingMaterial = list(
+      hatchingTextures = list(
+        ea_asset("hatch0"),
+        ea_asset("hatch1"),
+        ea_asset("hatch2"),
+        ea_asset("hatch3"),
+        ea_asset("hatch4"),
+        ea_asset("hatch5")
+      ),
+      textureTiling = list(10, 10)
+    ),
+    postEffect = list(
+      enable = TRUE,
+      edge = list(
+        enable = TRUE
+      )
+    )
+  )
+```

@@ -1,0 +1,30 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Assets for the [echarts4r](https://echarts4r.john-coene.com) package.
+
+## Install
+
+`echarts4r` is available from CRAN, `echarts4r.assets` is available from [Github](https://github.com/JohnCoene/echarts4r) only:
+
+```r
+install.packages("echarts4r")
+
+# install.packages("devtools")
+remotes::install_github("JohnCoene/echarts4r.assets")
+```
+
+## Note
+
+This is a large package due to the size of the high fidelity textures it contains (currently holding 11.6Mb of assets), it might take a small minute to install. However, this does not mean that it crowds tyour envrionment, on the contrary it includes but a few functions.
+
+## Example
+
+```{r}
+library(echarts4r)
+library(echarts4r.assets)
+
+
+```
