@@ -39,6 +39,9 @@ texture data from R into textures when \code{convert} is set to \code{TRUE}.
 
 Valid run \code{\link{ea_bank}} \code{asset}.
 }
+\note{
+See \code{\link{ea_bank}} for valid assets.
+}
 \section{Functions}{
 
 \itemize{

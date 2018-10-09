@@ -1,0 +1,57 @@
+---
+title: "Shiny"
+author: "John Coene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Shiny}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cho = TRUE, 
+  eval = FALSE
+)
+```
+
+Though you can use the assets in Shiny just as demonstrated in the [examples](assets.html), for performance reason you are better off following the methodology described in this document.
+
+The idea is fairly simple. Copy the asset(s) into your `www` directory and source them in `echarts4r`. The `ea_copy` function will copy the file to your `www` and prompt you to create the directory if is not existing. The function also checks whether the file is already copied before doing so.
+
+**Remember to pass `session` to your server function**
+
+```{r}
+library(shiny)
+library(echarts4r)
+library(echarts4r.assets)
+
+# copy
+ea_copy("world")
+
+ui <- fluidPage(
+  echarts4rOutput("globe")
+)
+
+server <- function(input, output, session){ # you MUST pass session
+  
+  output$globe <- renderEcharts4r({
+    
+    e_charts() %>% 
+      e_rm_axis("x") %>% 
+      e_rm_axis("y") %>% 
+      e_globe(
+        base.texture = ea_source("world") # source
+      )
+    
+  })
+  
+}
+
+shinyApp(ui, server)
+```
+
+This will be much more performant and will work with any asset.

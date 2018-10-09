@@ -1,7 +1,10 @@
 
 db <- tibble::tribble(
   ~ name,              ~ext,    ~path,
-  "clouds",            "png",   "assets/",
+  "clouds_trans",      "png",   "assets/",
+  "clouds",            "jpg",   "assets/",
+  "world_bw",          "jpg",   "assets/",
+  "world_bump",        "jpg",   "assets/",
   "composite_4k",      "jpg",   "assets/",
   "elevation_4k",      "jpg",   "assets/",
   "galaxy",            "jpg",   "assets/",
