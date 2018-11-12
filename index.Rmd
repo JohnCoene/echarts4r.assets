@@ -1,4 +1,6 @@
 
+[![Travis build status](https://travis-ci.org/JohnCoene/echarts4r.assets.svg?branch=master)](https://travis-ci.org/JohnCoene/echarts4r.assets)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
