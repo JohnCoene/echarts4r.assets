@@ -4,9 +4,6 @@ template:
   params:
     bootswatch: lumen
     ganalytics: UA-74544116-1
-    docsearch:
-      api_key: f67fcda57c44388a248e49a457aa4fe7
-      index_name: echarts4r
 
 development:
   mode: release

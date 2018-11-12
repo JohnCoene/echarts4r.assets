@@ -1,6 +1,6 @@
 Package: echarts4r.assets
 Title: Assets for the 'echarts4r' Package
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: Assets for the 'echarts4r' package.
 Depends: R (>= 3.4.2)
