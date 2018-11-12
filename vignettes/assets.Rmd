@@ -1,0 +1,119 @@
+---
+title: "Examples"
+author: "John Coene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+All assets currently available.
+
+```{r}
+library(echarts4r)
+library(echarts4r.assets)
+```
+
+For demonstration purposes let's create a basic, non working plot to which we'll add assets.
+
+```{r} 
+base <- e_charts() %>% # initialise
+  e_rm_axis("x") %>% # remove axis
+  e_rm_axis("y") 
+```
+
+## Examples
+
+*These are not all the textures included*
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world night")
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("galaxy"),
+    base.texture = ea_asset("jupiter")
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world topo"),
+    height.texture = ea_asset("elevation 4k")
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world topo"),
+    height.texture = ea_asset("elevation 4k"),
+    displacementScale = 0.1
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    environment = ea_asset("starfield"),
+    base.texture = ea_asset("world"),
+    layers = list(
+      list(
+        type = "overlay",
+        shading = "lambert",
+        texture = ea_asset("clouds trans"),
+        distance = 5
+      )
+    )
+  )
+```
+
+```{r}
+base %>% 
+  e_globe(
+    displacementScale = 0.1,
+    baseColor = "#000",
+    shading = "hatching",
+    height.texture = ea_asset("elevation 4k"),
+    hatchingMaterial = list(
+      hatchingTextures = list(
+        ea_asset("hatch0"),
+        ea_asset("hatch1"),
+        ea_asset("hatch2"),
+        ea_asset("hatch3"),
+        ea_asset("hatch4"),
+        ea_asset("hatch5")
+      ),
+      textureTiling = list(10, 10)
+    ),
+    postEffect = list(
+      enable = TRUE,
+      edge = list(
+        enable = TRUE
+      )
+    )
+  )
+```
+
+## Custom assets
+
+You can use your own assets too of course. In shiny simply place them in your `www` directory and reference the file name as texture, see the shiny section for more information. In R markdown you can simply use `ea_convert` to convert your texture.
+

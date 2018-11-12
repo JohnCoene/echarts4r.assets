@@ -46,14 +46,20 @@ li>a {
   color: #B03A5B;
 }
 
-.navbar-default .navbar-nav>.open>a, 
-.navbar-default .navbar-nav>.open>a:hover, 
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus{
   color: #d8d8d8;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, 
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu{
   color: #d8d8d8;
 }
 
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus {
+  color: #d8d8d8;
+  background-color: #293c55;
+}

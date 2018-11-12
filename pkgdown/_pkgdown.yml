@@ -23,13 +23,14 @@ navbar:
     - icon: fa-code
       href: "reference/"
     - icon: fa-globe
+      text: "Examples"
+      href: articles/assets.html
+    - icon: fa-rocket
       text: "Shiny"
-      href: assets.html
+      href: articles/shiny.html
   right:
     - icon: fa-github fa-lg
       href: https://github.com/JohnCoene/echarts4r.assets
-    - icon: fa-bitbucket fa-lg
-      href: https://bitbucket.org/JohnCoene/echarts4r.assets
 
 authors:
   John Coene:

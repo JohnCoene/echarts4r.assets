@@ -70,6 +70,8 @@ ea_bank <- function(){
 #' shinyApp(ui, server)
 #' }
 #'
+#' @note See \code{\link{ea_bank}} for valid assets.
+#'
 #' @rdname textures
 #' @export
 ea_asset <- function(asset, convert = TRUE){
@@ -78,7 +80,6 @@ ea_asset <- function(asset, convert = TRUE){
     stop("missing asset", call. = FALSE)
 
   asset <- gsub(" ", "_", tolower(asset))
-
   asset <- dplyr::filter(db, name == asset)
 
   if(nrow(asset) == 0)
@@ -119,14 +120,18 @@ ea_copy <- function(asset, dir = "www"){
       stop("Directory does not exist", call. = FALSE)
   }
 
-  ASSET <- paste0("assets/", asset, ".jpg")
+  ASSET <- gsub(" ", "_", tolower(asset))
+  ASSET <- dplyr::filter(db, name == ASSET)
+  ASSET <- paste0(ASSET$name, ".", ASSET$ext)
 
   files <- list.files(dir)
 
-  if(!ASSET %in% files)
-    file.copy(.get_file(ASSET, FALSE), dir)
-  else
+  if(!ASSET %in% files){
+    asset_path <- ea_asset(asset, FALSE)
+    file.copy(asset_path, dir)
+  } else {
     message("asset already present in directory, not copying.\n")
+  }
 
   message(
     "File successfully copied!"
@@ -136,5 +141,20 @@ ea_copy <- function(asset, dir = "www"){
 #' @rdname textures
 #' @export
 ea_source <- function(asset, dir = "www"){
-  paste0(dir, "/", asset, ".jpg")
+
+  if(missing(asset))
+    stop("missing asset", call. = FALSE)
+
+  asset <- gsub(" ", "_", tolower(asset))
+  asset <- dplyr::filter(db, name == asset)
+  asset <- paste0(asset$name, ".", asset$ext)
+
+  file <- paste0(dir, "/", asset)
+
+  ex <- file.exists(file)
+
+  if(!isTRUE(ex))
+    stop("missing file, see ea_copy()", call. = FALSE)
+
+  return(asset)
 }

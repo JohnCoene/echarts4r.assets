@@ -8,6 +8,11 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: base64enc, dplyr, shiny
-Suggests: echarts4r
+Suggests: echarts4r,
+    knitr,
+    rmarkdown
 Remotes: JohnCoene/echarts4r
 RoxygenNote: 6.1.0
+VignetteBuilder: knitr
+URL: http://echarts4r-assets.john-coene.com/
+BugReports: https://github.com/JohnCoene/echarts4r.assets/issues
