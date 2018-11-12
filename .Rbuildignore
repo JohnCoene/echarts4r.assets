@@ -5,3 +5,4 @@ _pkgdown.yml
 ^LICENSE\.md$
 index.Rmd
 ^data-raw$
+pkgdown
