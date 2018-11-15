@@ -1,9 +1,7 @@
-pandoc: 2.2.1
+pandoc: 1.19.2.4
 pkgdown: 1.1.0
 pkgdown_sha: ~
-articles:
-  assets: assets.html
-  shiny: shiny.html
+articles: []
 urls:
   reference: http://echarts4r-assets.john-coene.com/reference
   article: http://echarts4r-assets.john-coene.com/articles
