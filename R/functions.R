@@ -61,7 +61,7 @@ ea_bank <- function(){
 #'     e_charts() %>%
 #'       e_globe(
 #'         environment = ea_source("earth"),
-#'         base.texture = e_globe_texture()
+#'         base_texture = e_globe_texture()
 #'       )
 #'   })
 #'

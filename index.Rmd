@@ -47,7 +47,7 @@ e_charts() %>% # initialise
   e_rm_axis("y") %>% 
   e_globe(
     environment = ea_asset("starfield"),
-    base.texture = ea_asset("world")
+    base_texture = ea_asset("world")
   ) 
 ```
 

@@ -39,7 +39,7 @@ base <- e_charts() %>% # initialise
 base %>% 
   e_globe(
     environment = ea_asset("starfield"),
-    base.texture = ea_asset("world night")
+    base_texture = ea_asset("world night")
   )
 ```
 
@@ -47,7 +47,7 @@ base %>%
 base %>% 
   e_globe(
     environment = ea_asset("galaxy"),
-    base.texture = ea_asset("jupiter")
+    base_texture = ea_asset("jupiter")
   )
 ```
 
@@ -55,7 +55,7 @@ base %>%
 base %>% 
   e_globe(
     environment = ea_asset("starfield"),
-    base.texture = ea_asset("world topo"),
+    base_texture = ea_asset("world topo"),
     height.texture = ea_asset("elevation 4k")
   )
 ```
@@ -64,7 +64,7 @@ base %>%
 base %>% 
   e_globe(
     environment = ea_asset("starfield"),
-    base.texture = ea_asset("world topo"),
+    base_texture = ea_asset("world topo"),
     height.texture = ea_asset("elevation 4k"),
     displacementScale = 0.1
   )
@@ -74,7 +74,7 @@ base %>%
 base %>% 
   e_globe(
     environment = ea_asset("starfield"),
-    base.texture = ea_asset("world"),
+    base_texture = ea_asset("world"),
     layers = list(
       list(
         type = "overlay",

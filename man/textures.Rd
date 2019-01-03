@@ -71,7 +71,7 @@ server <- function(input, output){
     e_charts() \%>\%
       e_globe(
         environment = ea_source("earth"),
-        base.texture = e_globe_texture()
+        base_texture = e_globe_texture()
       )
   })
 
