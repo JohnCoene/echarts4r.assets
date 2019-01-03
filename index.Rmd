@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # echarts4r.assets
 
-Assets for the [echarts4r](https://echarts4r.john-coene.com) package.
+Assets for the [echarts4r](https://echarts4r.john-coene.com) package; contains high-resolution images for the the `echarts4r::e_globe` functions as well as icons to use in `echarts4r::e_legend` and other [echarts4r](https://echarts4r.john-coene.com) functions.
 
 ## Install
 
@@ -28,8 +28,12 @@ This is a large package due to the size of the high fidelity textures it contain
 
 The following assets are available.
 
-```{r}
+```{r, warning=FALSE}
 echarts4r.assets::ea_bank()
+
+data("icons")
+
+nrow(icons)
 ```
 
 ## Example

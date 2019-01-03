@@ -1,0 +1,109 @@
+---
+title: "Icons"
+author: "John Coene"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Icons}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The following 77 icons are included.
+
+## Scatter
+
+Simply use the `ea_icons` to which you pass the name of the icon you want.
+
+```{r}
+library(echarts4r)
+library(echarts4r.assets)
+
+mtcars %>% 
+  e_charts(mpg) %>% 
+  e_scatter(
+    wt, 
+    qsec,
+    symbol = ea_icons("trash"),
+    name = "Trash"
+  ) %>% 
+  e_legend(icons = ea_icons("trash"))
+```
+
+## Legend
+
+You can pass multiple names to `ea_icons`.
+
+```{r}
+# laod icon data
+data("icons") 
+
+# select 3 random icons (1 / group)
+icon_names <- sample(icons$name, 3) 
+
+iris %>% 
+  group_by(Species) %>% 
+  e_charts(Sepal.Length) %>% 
+  e_scatter(Sepal.Width, Petal.Length) %>% 
+  e_legend(
+    icon = ea_icons(icon_names)
+  )
+```
+
+## Pictorial
+
+Works with anything that takes a `symbol`.
+
+```{r}
+y <- rnorm(10, 10, 2)
+df <- data.frame(
+  x = 1:10,
+  y = y,
+  z = y - rnorm(10, 5, 1)
+)
+
+df %>% 
+  e_charts(x) %>% 
+  e_pictorial(
+    y, 
+    name = "volume",
+    symbol = ea_icons("microphone"), 
+    symbolRepeat = TRUE, 
+    z = -1,
+    symbolSize = c(20, 30)
+  ) %>% 
+  e_theme("dark")
+```
+
+## Search
+
+You can search icons with the convenience function `e_icon_search`.
+
+```{r}
+ea_icons_search("no")
+```
+
+## Custom
+
+Look at the output of `ea_icons` to understand how to pass your own SVG paths.
+
+```{r}
+cat(
+  ea_icons("volume")
+)
+```
+
+## All icons
+
+All 77 icons.
+
+```{r}
+icons$name
+```

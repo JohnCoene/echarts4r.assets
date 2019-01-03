@@ -20,8 +20,11 @@ navbar:
     - icon: fa-code
       href: "reference/"
     - icon: fa-globe
-      text: "Examples"
+      text: "Globe"
       href: articles/assets.html
+    - icon: fa-globe
+      text: "Icons"
+      href: articles/icons.html
     - icon: fa-rocket
       text: "Shiny"
       href: articles/shiny.html

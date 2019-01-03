@@ -29,4 +29,34 @@ db <- tibble::tribble(
   "hatch5",            "jpg",   "assets/tam/"
 )
 
-devtools::use_data(db, internal = TRUE, overwrite = TRUE)
+dir <- "data-raw/icons/"
+fls <- list.files(dir)
+fls <- paste0(dir, fls)
+read_icon <- function(x){
+
+  icn <- xml2::read_html(x)
+
+  icn %>%
+    rvest::html_node("path") %>%
+    rvest::html_attr("d") %>%
+    gsub('\\"', "", .)
+
+}
+
+svgs <- lapply(fls, read_icon)
+svgs <- unlist(svgs)
+
+name_icon <- function(x){
+  x <- gsub("data-raw/icons/77_Essential_Icons_", "", x)
+  x <- gsub("\\.svg", "", x)
+  x <- gsub(" ", "_", x)
+  tolower(x)
+}
+
+icons <- tibble::tibble(
+  path = svgs,
+  name = name_icon(fls)
+)
+
+usethis::use_data(db, internal = TRUE, overwrite = TRUE)
+usethis::use_data(icons, internal = FALSE, overwrite = TRUE)
