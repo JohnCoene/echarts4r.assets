@@ -1,4 +1,4 @@
-globalVariables(c("name", "path"))
+globalVariables(c("name", "path", "icons", "."))
 
 #' Icons.
 #'
@@ -22,7 +22,9 @@ NULL
 #'
 #' @param names The name or vector of names of the icon(s) as listed in \link{icons}.
 #'
-#' @examples ea_icon("bar_graph")
+#' @examples ea_icons("bar_graph")
+#'
+#' @importFrom magrittr %>%
 #'
 #' @rdname icons-func
 #' @export

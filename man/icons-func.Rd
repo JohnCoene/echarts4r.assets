@@ -16,6 +16,6 @@ ea_icons_search(names)
 Get an icon from the database of \link{icons}.
 }
 \examples{
-ea_icon("bar_graph")
+ea_icons("bar_graph")
 
 }

@@ -4,11 +4,11 @@ Version: 0.0.1
 Date: 2019-01-02
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: Assets for the 'echarts4r' package.
-Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: base64enc, dplyr, shiny
+Depends: R (>= 2.10)
+Imports: base64enc, dplyr, shiny, magrittr
 Suggests: echarts4r,
     knitr,
     rmarkdown
