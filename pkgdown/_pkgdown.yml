@@ -22,7 +22,7 @@ navbar:
     - icon: fa-globe
       text: "Globe"
       href: articles/assets.html
-    - icon: fa-globe
+    - icon: fa-exclamation
       text: "Icons"
       href: articles/icons.html
     - icon: fa-rocket

@@ -44,7 +44,7 @@ server <- function(input, output, session){ # you MUST pass session
       e_rm_axis("x") %>% 
       e_rm_axis("y") %>% 
       e_globe(
-        base.texture = ea_source("world") # source
+        base_texture = ea_source("world") # source
       )
     
   })
