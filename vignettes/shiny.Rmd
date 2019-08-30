@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-Though you can use the assets in Shiny just as demonstrated in the [examples](assets.html), for performance reason you are better off following the methodology described in this document.
+Though you can use the assets in Shiny just as demonstrated in the [examples](assets.html), for performance reasons you are better off following the methodology described in this document.
 
-The idea is fairly simple. Copy the asset(s) into your `www` directory and source them in `echarts4r`. The `ea_copy` function will copy the file to your `www` and prompt you to create the directory if is not existing. The function also checks whether the file is already copied before doing so.
+The idea is fairly simple. Copy the asset(s) into your `www` directory and source them in `echarts4r`. The `ea_copy` function will copy the file to your `www` and prompt you to create the directory if it does not exist. The function also checks whether the file is already copied before doing so.
 
 **Remember to pass `session` to your server function**
 
