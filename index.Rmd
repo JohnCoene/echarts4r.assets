@@ -22,7 +22,7 @@ remotes::install_github("JohnCoene/echarts4r.assets")
 
 ## Note
 
-This is a large package due to the size of the high fidelity textures it contains (currently holding 11.6Mb of assets), it might take a small minute to install. However, this does not mean that it crowds tyour envrionment, on the contrary it includes but a few functions.
+This is a large package due to the size of the high fidelity textures it contains (currently holding 11.6Mb of assets), it might take a small minute to install. However, this does not mean that it crowds your envrionment, on the contrary it includes but a few functions.
 
 ## Assets
 
